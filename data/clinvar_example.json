@@ -1,0 +1,17 @@
+[
+  {
+    "assembly": "GRCh38",
+    "chrom": "7",
+    "pos": 117559591,
+    "ref": "TCTT",
+    "alt": "T",
+    "gene_symbol": "CFTR",
+    "condition": "Cystic fibrosis",
+    "disease_id": "OMIM:219700",
+    "classification": "Pathogenic",
+    "review_status": "practice guideline",
+    "record_accession": "RCV000007523.119",
+    "source_url": "https://www.ncbi.nlm.nih.gov/clinvar/RCV000007523/",
+    "snapshot_date": "2026-09-24"
+  }
+]
