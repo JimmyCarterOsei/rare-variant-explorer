@@ -1,0 +1,22 @@
+# Local environment and credentials
+.env
+.env.*
+.venv/
+venv/
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Fetched annotations and private/local input files
+data/*
+!data/example.vcf
+!data/cftr_g551d.vcf
+!data/cftr_f508del.vcf
+!data/clinvar_g551d.json
+!data/clinvar_example.json
+
+# Runtime state and generated artifacts
+*.jsonl
+pgdata/
+*.log

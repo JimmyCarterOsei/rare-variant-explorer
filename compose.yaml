@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: explorer
+      POSTGRES_PASSWORD: localdemo
+      POSTGRES_DB: explorer
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U explorer -d explorer"]
+      interval: 3s
+      retries: 15
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://explorer:localdemo@db:5432/explorer
+    ports:
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  pgdata:
