@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rare Variant Explorer</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script type="module" src="/static/app.js?v=clinvar-20260924"></script>
+</head>
+<body>
+  <header><span class="eyebrow">PUBLIC GENOMICS · GRCh38</span><h1>Rare Variant Explorer</h1>
+    <p>Explore VEP annotations and HPO gene associations from public resources.</p></header>
+  <main>
+    <form id="search"><label for="gene">Filter by gene symbol</label><div class="search-row">
+      <input id="gene" placeholder="e.g. BRCA2" autocomplete="off"><button>Search</button></div></form>
+    <p id="status" role="status">Loading variants…</p>
+    <div class="layout"><section aria-label="Variants"><div class="section-heading"><h2>Variants</h2><span id="count"></span></div>
+      <div class="table-wrap"><table><thead><tr><th>Location</th><th>Allele</th><th>Gene</th><th>VEP consequence</th><th>gnomAD genomes AF</th></tr></thead><tbody id="variants"></tbody></table></div>
+      <div class="pager"><button id="prev" type="button">Previous</button><span id="page"></span><button id="next" type="button">Next</button></div>
+    </section><aside id="detail" aria-live="polite"><h2>Variant detail</h2><p>Select a row to see provenance, the selected transcript and gene associations.</p></aside></div>
+  </main>
+  <footer>Research demonstration only. Consequences, allele frequencies and gene–phenotype associations do not establish pathogenicity or a diagnosis. HPO terms © Human Phenotype Ontology; source fingerprint shown in variant detail. Never upload patient data.</footer>
+</body>
+</html>
